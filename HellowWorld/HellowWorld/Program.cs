@@ -9,8 +9,23 @@ namespace HellowWorld
 {
     internal class Program
     {
+        static int Tam = 3; // variavel global
+
+        //enum enumera cada um dos elementos, e pode mudar seu valor
+        enum Cor { azul, amarelo = 12, vermelho };
+
         static void Main(string[] args)
         {
+            //Exemplo utilizando enum----------------------------------------------
+            Cor corFavorita = Cor.vermelho;
+            Cor corFavoritaDaAna = Cor.amarelo;
+            Cor corFavoritaDaPaula = Cor.azul;
+            Console.WriteLine("corFavorita: " + (int)corFavorita);//Mostra o valor por trás do elemento
+            Console.WriteLine("corFavoritaDaAna: " + corFavoritaDaAna);
+            Console.WriteLine("corFavoritaDaPaula: " + (int)corFavoritaDaPaula);
+            Console.WriteLine("corFavorita" + (int)corFavorita);
+            //---------------------------------------------------------------------
+
 
             //int - 123
             //Float - 12.6
@@ -39,6 +54,22 @@ namespace HellowWorld
             //float div = 5.0f/2;
             //Console.WriteLine(div);
 
+
+
+            //Switch Case-------------------------------------------
+            /*string[] produtos = new string[Tam];
+
+            //int[] quantidade = { 1, 2, 3 };
+
+
+            switch (Tam)
+            {
+                case 1:
+                    Console.WriteLine(Tam);
+                    break;
+            }    
+            */
+            //------------------------------------------------------
 
             Console.ReadLine();//Espera o Enter
         }
