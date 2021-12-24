@@ -1,2 +1,2 @@
-# Exercicios_C-
-Alguns exercícios de lógica utilizando C#.NET 
+# Exercicios_E_Exemplos_Csharp
+Alguns exercícios de lógica e exemplos em C#.NET 
