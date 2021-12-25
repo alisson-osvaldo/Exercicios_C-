@@ -41,6 +41,15 @@ namespace Array_Vetor
             {
                 Console.WriteLine(veiculos[i]);
             }
+
+            //Loop for utilizando length
+            int[] num = new int[3];
+            Console.WriteLine("\nLoop de for utilizando length:");
+            for (int i = 0; i < num.Length; i++)
+            {
+                num[i] = i;
+                Console.WriteLine("Valor de num na{0}: {1}", i, num[i]);
+            }
             
             Console.ReadLine();
         }
