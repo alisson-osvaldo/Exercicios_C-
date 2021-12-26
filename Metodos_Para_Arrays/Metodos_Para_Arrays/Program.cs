@@ -104,12 +104,74 @@ namespace Metodos_Para_Arrays
                 Console.WriteLine("O valor não existe no Array!!!");
                 Console.WriteLine("\n------------------------------------------------------------");
             } else {
-                Console.WriteLine("Indice do valor 3: {0}", indice1);
+                Console.WriteLine("Maior indice com valor 3: {0}", indice1);
                 Console.WriteLine("\n------------------------------------------------------------");
             }
 
 
-            //
+            //public static in LastIndexOf( Array, Valor ): vai retornar o ultimo indice do valor passado
+            Console.WriteLine("\nLastIndexOf:");
+            int indice2 = Array.LastIndexOf(vet1, 3);
+            if(indice2 < 0)
+            {
+                Console.WriteLine("O valor não existe no Array!!!");
+                Console.WriteLine("\n------------------------------------------------------------");
+            } else
+            {
+                Console.WriteLine("Menor indice com valor 3: {0}", indice2);
+                Console.WriteLine("\n------------------------------------------------------------");
+            }
+
+
+            //public static void Reverse( Array ): ele inverte a ordem dos elementos ex: 12345 == 54321 
+            Console.WriteLine("\nReverse:");
+            Array.Reverse(vet1);
+            Console.WriteLine("Revertendo vet1 : ");
+            foreach (int n in vet1)
+            {
+                Console.WriteLine(n);
+            }
+            Console.WriteLine("\n------------------------------------------------------------");
+
+
+            //public void SetValue(object valor, long pososição): nos permite definir um valor em uma posição do nosso vetor
+            Console.WriteLine("\nSetValue:");
+            //vet2.SetValue(9, 0); //ex:Setando valor 9 no indice 0
+            for(int i = 0; i < vet2.Length; i++)
+            {
+                vet2.SetValue(0,i);//()Setando 0 para todo o vetor já que estamos percorrendo indice por indice com i
+            }
+            foreach (int n in vet2)
+            {
+                Console.WriteLine(n);
+            }
+            Console.WriteLine("\n------------------------------------------------------------");
+
+
+            //public static void Sort(Array): Ordenar em ordem crecente ou decrecente, em decresente usar o Reverse.
+            Console.WriteLine("\nSetValue:");
+            Array.Sort(vet1);
+            Array.Sort(vet2);
+            Array.Sort(vet3);
+            Array.Reverse(vet3);
+            Console.WriteLine("\nVet1 ordem crecente:");
+            foreach (int n in vet1)
+            {
+                Console.WriteLine(n);
+            }
+            Console.WriteLine("\nVet2 ordem crecente:");
+            foreach (int n in vet2)
+            {
+                Console.WriteLine(n);
+            }
+            Console.WriteLine("\nVet3 ordem decrecente:");
+            foreach (int n in vet3)
+            {
+                Console.WriteLine(n);
+            }
+            Console.WriteLine("\n------------------------------------------------------------");
+
+
 
 
             Console.ReadLine();
