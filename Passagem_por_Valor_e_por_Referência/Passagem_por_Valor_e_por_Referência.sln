@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Passagem_por_Valor_e_por_Referência", "Passagem_por_Valor_e_por_Referência\Passagem_por_Valor_e_por_Referência.csproj", "{C6525B35-11C7-449A-A219-640329730079}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C6525B35-11C7-449A-A219-640329730079}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6525B35-11C7-449A-A219-640329730079}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6525B35-11C7-449A-A219-640329730079}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6525B35-11C7-449A-A219-640329730079}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AB2B65B3-D753-4579-A0DE-9F5904A77525}
+	EndGlobalSection
+EndGlobal
