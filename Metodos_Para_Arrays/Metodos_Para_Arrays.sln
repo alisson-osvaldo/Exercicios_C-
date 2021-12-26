@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Metodos_Para_Arrays", "Metodos_Para_Arrays\Metodos_Para_Arrays.csproj", "{1D476653-6EC4-42CA-A40E-161EBDFAB991}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D476653-6EC4-42CA-A40E-161EBDFAB991}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D476653-6EC4-42CA-A40E-161EBDFAB991}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D476653-6EC4-42CA-A40E-161EBDFAB991}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D476653-6EC4-42CA-A40E-161EBDFAB991}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {913205E6-5081-4BC9-8078-2B3C528220B2}
+	EndGlobalSection
+EndGlobal
