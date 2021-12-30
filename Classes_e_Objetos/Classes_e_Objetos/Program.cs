@@ -23,6 +23,7 @@ namespace Classes_e_Objetos
                 - Abstract: Classe base para outras classes, não podem ser instanciados objetos dessa classe
                 - Selead: Classe não pode ser herdada
                 - Static: A Classe não permite instaciação de objetos e seus membros devem ser Static
+                - Internal: Apenas dentro do seu namespace{}
 
             * EspecificadorAcesso: Onde um membro da classe pode ser acessado
                 - Public: Sem restrição de acesso
