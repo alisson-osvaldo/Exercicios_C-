@@ -1,5 +1,6 @@
 ﻿using System;
 using Calculo;
+using Diretorio;
 
 namespace Tela
 {
@@ -8,6 +9,7 @@ namespace Tela
         //recendo um valor const para as opções
         public const int DIVIDIR = 1;
         public const int CALCULO_MEDIA = 2;
+        public const int LER_ARQUIVO = 3;
         public const int SAIR = 0;
 
         public static void Criar()
@@ -18,7 +20,8 @@ namespace Tela
                 "\n\nEscolha uma das Opções a baixo:" +
                 "\n 0 - Sair" +
                 "\n 1 - Dividir" +
-                "\n 2 - Média";
+                "\n 2 - Média" + 
+                "\n 3 - Buscar Arquivo";
                 Console.WriteLine(msg);
 
                 int valor = int.Parse(Console.ReadLine());
@@ -49,6 +52,9 @@ namespace Tela
                     Console.WriteLine("\n=========================== Média ============================");
                     Media.Aluno();
 
+                } else if (valor == LER_ARQUIVO)
+                {
+                    Arquivo.Ler(1);
                 }
                 else
                 {
