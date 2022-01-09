@@ -10,24 +10,50 @@ namespace Classes
 {
     public class Cliente
     {
+        //Atributos da classe
         public string Nome;
         public string Telefone;
         public string Cpf;
 
-        public void Gravar()
+        //Método com parâmetros
+        public Cliente(string nome, string telefone, string cpf)
         {
-
+            this.Nome = nome;
+            this.Telefone = telefone;
+            this.Cpf = cpf;
         }
 
-        public static string caminhoBaseClientes() //2- vai acessar este método, q vai pegar os dados da configuração e vai retornar
+        //Método sem parâmetros
+        public Cliente(){ }
+
+        //Método para gravar no nosso .txt 
+        public void Gravar()
+        {
+            var clientes = Cliente.lerClientes();
+            clientes.Add(this);//adicionando o que tem na nossa instancia de: var cliente = new Cliente();
+            if (File.Exists(caminhoBaseClientes())) //3- Verificar se o arquivo exite 
+            {
+                StreamWriter r = new StreamWriter(caminhoBaseClientes());
+                //r.WriteLine("nome;telefone;cpf;");
+                foreach (Cliente c in clientes)
+                {
+                    var linha = c.Nome + ";" + c.Telefone + ";" + c.Cpf + ";" ;
+                    r.WriteLine (linha);
+                }
+                r.Close();//fechando a conecção com meu arquivo
+            }
+        }
+
+        //Método retornar os dados(clientes) da App.config -> configuration -> appSettings
+        public static string caminhoBaseClientes() //2-
         {
             return ConfigurationManager.AppSettings["BaseDeClientes"];
         }
 
-
+        //Lista de clientes
         public static List<Cliente> lerClientes() //1- Mandando ler os Clientes, q vai chamar o método caminhoBaseClientes()
         {
-            var clientes = new List<Cliente>();
+            var clientes = new List<Cliente>();//instanciando cliente de lista de Clientes
 
             if (File.Exists(caminhoBaseClientes())) //3- Verificar se o arquivo exite 
             {
@@ -39,18 +65,14 @@ namespace Classes
                     {
                         if (i == 1) continue; //Para não ler a primeira linha do Clientes.txt
                         var clienteArquivo = linha.Split(';'); //vai separar por ';' , no caso do Clientes.txt vai nos retornar um Array de 3 posições
-                        var cliente = new Cliente(); //Instânciando um novo cliente
-                        //Preenchendo as propriedades do do Cliente
-                        cliente.Nome = clienteArquivo[0];
-                        cliente.Telefone = clienteArquivo[1];
-                        cliente.Cpf = clienteArquivo[2];
-                        
+                        var cliente = new Cliente(clienteArquivo[0], clienteArquivo[1], clienteArquivo[2]); //Instânciando um novo cliente
                         clientes.Add(cliente); //-6 adicionando os clientes na nossa nova instância de cliente
                     }
                 }
             }
             return clientes;
         }
+
 
     }
 }
