@@ -15,7 +15,7 @@ namespace Classes
         public string Telefone;
         public string Cpf;
 
-        //Método com parâmetros
+        //Construtor com parâmetros
         public Cliente(string nome, string telefone, string cpf)
         {
             this.Nome = nome;
@@ -23,12 +23,15 @@ namespace Classes
             this.Cpf = cpf;
         }
 
-        //Método sem parâmetros
+        //Construtor sem parâmetros
         public Cliente(){ }
 
         //Método para gravar no nosso .txt 
         public void Gravar()
         {
+
+            this.olhar();
+   
             var clientes = Cliente.lerClientes();
             clientes.Add(this);//adicionando o que tem na nossa instancia de: var cliente = new Cliente();
             if (File.Exists(caminhoBaseClientes())) //3- Verificar se o arquivo exite 
@@ -42,6 +45,11 @@ namespace Classes
                 }
                 r.Close();//fechando a conecção com meu arquivo
             }
+        }
+
+        private void olhar()
+        {
+            Console.WriteLine("\nO cliente " + this.Nome + " foi cadastrado.");
         }
 
         //Método retornar os dados(clientes) da App.config -> configuration -> appSettings
