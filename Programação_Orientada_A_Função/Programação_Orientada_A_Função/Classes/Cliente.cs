@@ -26,46 +26,41 @@ namespace Classes
         //Construtor sem parâmetros
         public Cliente(){ }
 
-        //Método para gravar no nosso .txt 
-        public void Gravar()
-        {
 
-            this.olhar();
-   
+        //Método retornar os dados(clientes) da App.config -> configuration -> appSettings
+        public static string CaminhoBase() //2-
+        {
+            return ConfigurationManager.AppSettings["BaseDeClientes"];
+        }
+
+
+        //virtual -Quer dizer que essemétodo ou propriedade pode ser sobscrita
+        public virtual void Gravar()
+        {
             var clientes = Cliente.lerClientes();
-            clientes.Add(this);//adicionando o que tem na nossa instancia de: var cliente = new Cliente();
-            if (File.Exists(caminhoBaseClientes())) //3- Verificar se o arquivo exite 
+            Cliente c = new Cliente(this.Nome, this.Cpf, this.Telefone);
+            clientes.Add(c);//adicionando o que tem na nossa instancia de: var cliente = new Cliente();
+            if (File.Exists(CaminhoBase())) //3- Verificar se o arquivo exite 
             {
-                StreamWriter r = new StreamWriter(caminhoBaseClientes());
-                //r.WriteLine("nome;telefone;cpf;");
-                foreach (Cliente c in clientes)
+                StreamWriter r = new StreamWriter(CaminhoBase());
+                foreach (Cliente user in clientes)
                 {
-                    var linha = c.Nome + ";" + c.Telefone + ";" + c.Cpf + ";" ;
-                    r.WriteLine (linha);
+                    var linha = user.Nome + ";" + user.Telefone + ";" + user.Cpf + ";";
+                    r.WriteLine(linha);
                 }
                 r.Close();//fechando a conecção com meu arquivo
             }
         }
 
-        private void olhar()
-        {
-            Console.WriteLine("\nO cliente " + this.Nome + " foi cadastrado.");
-        }
-
-        //Método retornar os dados(clientes) da App.config -> configuration -> appSettings
-        public static string caminhoBaseClientes() //2-
-        {
-            return ConfigurationManager.AppSettings["BaseDeClientes"];
-        }
 
         //Lista de clientes
-        public static List<Cliente> lerClientes() //1- Mandando ler os Clientes, q vai chamar o método caminhoBaseClientes()
+        public static List<Cliente> lerClientes() //1- Mandando ler os Clientes, q vai chamar o método CaminhoBaseClientes()
         {
             var clientes = new List<Cliente>();//instanciando cliente de lista de Clientes
 
-            if (File.Exists(caminhoBaseClientes())) //3- Verificar se o arquivo exite 
+            if (File.Exists(CaminhoBase())) //3- Verificar se o arquivo exite 
             {
-                using (StreamReader arquivo = File.OpenText(caminhoBaseClientes()))//-4 Se ele existe leia esse arquivo
+                using (StreamReader arquivo = File.OpenText(CaminhoBase()))//-4 Se ele existe leia esse arquivo
                 {
                     string linha; //-5 guardar aqui esses dados
                     int i = 0;
@@ -80,6 +75,9 @@ namespace Classes
             }
             return clientes;
         }
+
+
+       
 
 
     }
